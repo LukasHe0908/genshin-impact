@@ -42,11 +42,18 @@ jobs:
         run: |
          cd Genshin-Impact-Wish-Simulator
          7z a -tzip frontend.zip ./.vercel/output/static
+         7z a -tzip output.zip ./.vercel/output
       - name: Upload
         uses: actions/upload-artifact@v4.5.0
         with:
           name: frontend
           path: Genshin-Impact-Wish-Simulator/frontend.zip
+      - name: Upload
+        uses: actions/upload-artifact@v4.5.0
+        with:
+          name: output
+          path: Genshin-Impact-Wish-Simulator/output.zip
+          
   updater:
     if: ${{github.event_name == 'workflow_dispatch'}}
     name: Update static files
