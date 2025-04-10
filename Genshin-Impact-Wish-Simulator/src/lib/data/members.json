@@ -15,9 +15,10 @@
 		{
 			"name": "abc",
 			"chineseChar": "发顺丰"
-		},{
-			"name": "abc",
-			"chineseChar": "还回去"
+		},
+	        {
+			"name": "test-foo",
+			"chineseChar": "何同学"
 		}
     ]
 }
