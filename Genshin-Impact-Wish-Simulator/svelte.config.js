@@ -13,9 +13,6 @@ const config = {
 		}),
 		alias: {
 			$post: path.resolve('./src/post')
-		},
-		prerender: {
-			default: true
 		}
 	},
 	preprocess: preprocess({ postcss: true })
