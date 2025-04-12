@@ -6,15 +6,13 @@ on:
     tags:
       - 'v*'
 jobs:
-  page:
-    name: Build&Update pages
-    if: true
-    uses: ./.github/workflows/page.yml
   app:
-    needs: page
     name: Build app
     uses: ./.github/workflows/app.yml
-
+  page:
+    name: Build&Update pages
+    if: false
+    uses: ./.github/workflows/page.yml
   release:
     needs: app
     runs-on: ubuntu-latest
