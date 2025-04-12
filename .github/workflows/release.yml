@@ -11,6 +11,7 @@ jobs:
     if: true
     uses: ./.github/workflows/page.yml
   app:
+    needs: page
     name: Build app
     uses: ./.github/workflows/app.yml
 
