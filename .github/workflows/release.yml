@@ -1,18 +1,19 @@
 name: Release
 
 on:
- workflow_dispatch:
- push:
-   tags:
-     - "v*"
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
 jobs:
+  page:
+    name: Build&Update pages
+    if: true
+    uses: ./.github/workflows/page.yml
   app:
     name: Build app
     uses: ./.github/workflows/app.yml
-  page:
-    name: Build&Update pages
-    if: false
-    uses: ./.github/workflows/page.yml
+
   release:
     needs: app
     runs-on: ubuntu-latest
@@ -23,5 +24,5 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2.2.1
         with:
-            files: ./**/genish-impact*.*
-            body_path: ./CHANGELOG.md
+          files: ./**/genish-impact*.*
+          body_path: ./CHANGELOG.md
