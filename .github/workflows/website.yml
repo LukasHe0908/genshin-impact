@@ -3,16 +3,16 @@ name: Deploy docs
 on:
  workflow_dispatch:
  workflow_call:
- pull_request:
-    branches:
-      - main # default branch
-    paths:
-      - webdocs/**/**
- push:
-    branches:
-      - main # default branch
-    paths:
-      - webdocs/**/**
+#  pull_request:
+#     branches:
+#       - main # default branch
+#     paths:
+#       - webdocs/**/**
+#  push:
+#     branches:
+#       - main # default branch
+#     paths:
+#       - webdocs/**/**
 
 jobs:
   Build:

@@ -3,18 +3,18 @@ name: Build app
 on:
  workflow_dispatch:
  workflow_call:
- push:
-    branches:
-      - main # default branch
-    paths:
-      - electron-static/**/**
-      - Genshin-Impact-Wish-Simulator/src-tauri/**/**
- pull_request:
-    branches:
-      - main # default branch
-    paths:
-      - electron-static/**/**
-      - Genshin-Impact-Wish-Simulator/src-tauri/**/**
+#  push:
+#     branches:
+#       - main # default branch
+#     paths:
+#       - electron-static/**/**
+#       - Genshin-Impact-Wish-Simulator/src-tauri/**/**
+#  pull_request:
+#     branches:
+#       - main # default branch
+#     paths:
+#       - electron-static/**/**
+#       - Genshin-Impact-Wish-Simulator/src-tauri/**/**
 
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest,ubuntu-latest,macos-latest,macos-13]
+        os: [windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4.2.2
@@ -55,6 +55,6 @@ jobs:
         with:
           name: genish-impact-${{ runner.os }}-${{runner.arch}}
           path: electron-static/genish-impact-${{ runner.os }}-${{runner.arch}}.zip
-  Build-Tauri:
-    name: Build app with Tauri
-    uses: ./.github/workflows/tauri.yml
+  # Build-Tauri:
+  #   name: Build app with Tauri
+  #   uses: ./.github/workflows/tauri.yml

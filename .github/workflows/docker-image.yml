@@ -2,11 +2,11 @@ name: Docker
 
 on:
  workflow_dispatch:
- push:
-    branches:
-      - main # default branch
-    paths:
-      - Genshin-Impact-Wish-Simulator/src/**/**
+#  push:
+#     branches:
+#       - main # default branch
+#     paths:
+#       - Genshin-Impact-Wish-Simulator/src/**/**
 
 jobs:
   DockerHub:
